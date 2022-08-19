@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+      	<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
+		<link rel="stylesheet" href="treeMenu.css" />
+		<script type="text/javascript" src="json2.js"></script>
+		<script type="text/javascript" src="jquery-1.9.1.js"></script>
+		<script type="text/javascript" src="checkutil.js"></script>
+		<script type="text/javascript" src="treeMenu.js"></script>
+		<title></title>
+	</head>
+	<style>
+		body {
+			background: lightgray;
+		}
+		
+		.TreeMenuList>div {
+			margin: 5px;
+		}
+		
+		.TreeMenuList {
+			/**flexbox兼容**/
+			display: -webkit-box;
+			/* OLD - iOS 6-, Safari 3.1-6 */
+			display: -moz-box;
+			/* OLD - Firefox 19- (doesn't work very well) */
+			display: -ms-flexbox;
+			/* TWEENER - IE 10 */
+			display: -webkit-flex;
+			/* NEW - Chrome */
+			display: flex;
+			/**flexbox兼容**/
+			-webkit-box-orient: horizontal;
+			-webkit-flex-direction: row;
+			-moz-flex-direction: row;
+			-ms-flex-direction: row;
+			-o-flex-direction: row;
+			flex-direction: row;
+		}
+	</style>
+
+	<body>
+		<div class="TreeMenuList">
+			<div id="TreeMenu01"></div>
+		</div>
+		
+	</body>
+	<script>
+		var menus01 = [{
+			name: "777",
+			href: "",
+			subMenus: [{
+				name: "android",
+				href: "",
+				subMenus: [{
+					name: "内内内内内内内内内内内内内内",
+					href: "http://192.168.0.122:8080/app/j_1.apk",
+				}, {
+					name: "外外外外外外外外外外外外外外",
+					href: "http://192.168.0.122:8080/app/j_2.apk"
+				}]
+			}, {
+				name: "ios",
+				href: "",
+				subMenus: [{
+					name: "内内内内内内内内内内内内内内",
+					href: "itms-services://?action=download-manifest&url=https://coding-pages-bucket-445607-1245704-9329-439370-1257057656.cos-website.ap-shanghai.myqcloud.com/j_1.plist"
+				}, {
+					name: "外外外外外外外外外外外外外外",
+					href: "itms-services://?action=download-manifest&url=https://coding-pages-bucket-445607-1245704-9329-439370-1257057656.cos-website.ap-shanghai.myqcloud.com/j_2.plist"
+				}]
+			}]
+		}, {
+			name: "918",
+			href: "",
+			subMenus: [{
+				name: "android",
+				href: "",
+				subMenus: [{
+					name: "内内内内内内内内内内内内内内",
+					href: "http://192.168.0.122:8080/app/jp_1.apk"
+				}, {
+					name: "外外外外外外外外外外外外外外",
+					href: "http://192.168.0.122:8080/app/jp_2.apk"
+				}]
+			}, {
+				name: "ios",
+				href: "",
+				subMenus: [{
+					name: "内内内内内内内内内内内内内内",
+					href: "itms-services://?action=download-manifest&url=https://coding-pages-bucket-445607-1245704-9329-439370-1257057656.cos-website.ap-shanghai.myqcloud.com/jp_1.plist"
+				}, {
+					name: "外外外外外外外外外外外外外外",
+					href: "itms-services://?action=download-manifest&url=https://coding-pages-bucket-445607-1245704-9329-439370-1257057656.cos-website.ap-shanghai.myqcloud.com/jp_2.plist"
+				}]
+			}]
+		},{
+			name: "vgas",
+			href: "",
+			subMenus: [{
+				name: "android",
+				href: "",
+				subMenus: [{
+					name: "内内内内内内内内内内内内内内",
+					href: "http://192.168.0.122:8080/app/888_1.apk"
+				}, {
+					name: "外外外外外外外外外外外外外外",
+					href: "http://192.168.0.122:8080/app/888_2.apk"
+				}]
+			}, {
+				name: "ios",
+				href: "",
+				subMenus: [{
+					name: "内内内内内内内内内内内内内内",
+					href: "itms-services://?action=download-manifest&url=https://coding-pages-bucket-445607-1245704-9329-439370-1257057656.cos-website.ap-shanghai.myqcloud.com/siha_1.plist"
+				}, {
+					name: "外外外外外外外外外外外外外外",
+					href: "itms-services://?action=download-manifest&url=https://coding-pages-bucket-445607-1245704-9329-439370-1257057656.cos-website.ap-shanghai.myqcloud.com/siha_2.plist"
+				}]
+			}]
+		},{
+			name: "gigawin",
+			href: "",
+			subMenus: [{
+				name: "android",
+				href: "",
+				subMenus: [{
+					name: "内内内内内内内内内内内内内内",
+					href: "http://192.168.0.122:8080/app/b_1.apk"
+				}, {
+					name: "外外外外外外外外外外外外外外",
+					href: "http://192.168.0.122:8080/app/b_2.apk"
+				}]
+			}, {
+				name: "ios",
+				href: "",
+				subMenus: [{
+					name: "内内内内内内内内内内内内内内",
+					href: "itms-services://?action=download-manifest&url=https://coding-pages-bucket-445607-1245704-9329-439370-1257057656.cos-website.ap-shanghai.myqcloud.com/b_1.plist"
+				}, {
+					name: "外外外外外外外外外外外外外外",
+					href: "itms-services://?action=download-manifest&url=https://coding-pages-bucket-445607-1245704-9329-439370-1257057656.cos-website.ap-shanghai.myqcloud.com/b_2.plist"
+				}]
+			}]
+		},{
+			name: "Lv818",
+			href: "",
+			subMenus: [{
+				name: "android",
+				href: "",
+				subMenus: [{
+					name: "内内内内内内内内内内内内内内",
+					href: "http://192.168.0.122:8080/app/lv_1.apk"
+				}, {
+					name: "外外外外外外外外外外外外外外",
+					href: "http://192.168.0.122:8080/app/lv_2.apk"
+				}]
+			}, {
+				name: "ios",
+				href: "",
+				subMenus: [{
+					name: "内内内内内内内内内内内内内内",
+					href: "itms-services://?action=download-manifest&url=https://coding-pages-bucket-445607-1245704-9329-439370-1257057656.cos-website.ap-shanghai.myqcloud.com/lv_1.plist"
+				}, {
+					name: "外外外外外外外外外外外外外外",
+					href: "itms-services://?action=download-manifest&url=https://coding-pages-bucket-445607-1245704-9329-439370-1257057656.cos-website.ap-shanghai.myqcloud.com/lv_2.plist"
+				}]
+			}]
+		},{
+			name: "BitCoin",
+			href: "",
+			subMenus: [{
+				name: "android",
+				href: "",
+				subMenus: [{
+					name: "内内内内内内内内内内内内内内",
+					href: "http://192.168.0.122:8080/app/bit_1.apk"
+				}, {
+					name: "外外外外外外外外外外外外外外",
+					href: "http://192.168.0.122:8080/app/bit_2.apk"
+				}]
+			}, {
+				name: "ios",
+				href: "",
+				subMenus: [{
+					name: "内内内内内内内内内内内内内内",
+					href: "itms-services://?action=download-manifest&url=https://coding-pages-bucket-445607-1245704-9329-439370-1257057656.cos-website.ap-shanghai.myqcloud.com/bit_1.plist"
+				}, {
+					name: "外外外外外外外外外外外外外外",
+					href: "itms-services://?action=download-manifest&url=https://coding-pages-bucket-445607-1245704-9329-439370-1257057656.cos-website.ap-shanghai.myqcloud.com/bit_2.plist"
+				}]
+			}]
+		},{
+			name: "v7",
+			href: "",
+			subMenus: [{
+				name: "android",
+				href: "",
+				subMenus: [{
+					name: "内内内内内内内内内内内内内内",
+					href: "http://192.168.0.122:8080/app/v7_1.apk"
+				}, {
+					name: "外外外外外外外外外外外外外外",
+					href: "http://192.168.0.122:8080/app/v7_2.apk"
+				}]
+			}, {
+				name: "ios",
+				href: "",
+				subMenus: [{
+					name: "内内内内内内内内内内内内内内",
+					href: "itms-services://?action=download-manifest&url=https://coding-pages-bucket-445607-1245704-9329-439370-1257057656.cos-website.ap-shanghai.myqcloud.com/v7_1.plist"
+				}, {
+					name: "外外外外外外外外外外外外外外",
+					href: "itms-services://?action=download-manifest&url=https://coding-pages-bucket-445607-1245704-9329-439370-1257057656.cos-website.ap-shanghai.myqcloud.com/v7_2.plist"
+				}]
+			}]
+		}];
+		var menus02 = JSON.stringify(menus01);
+		var config01 = {
+			treeMenuId: "#TreeMenu01",
+			superLevel: 0,
+			multiple: true,
+		};
+		treeMenu.init(menus01, config01);
+	</script>
+
+</html>

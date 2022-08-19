@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"><plist version="1.0"><dict>
+    <key>items</key>
+    <array>
+        <dict>
+            <key>assets</key>
+            <array>
+                <dict>
+                    <key>kind</key>
+                    <string>software-package</string>
+                    <key>url</key>
+                    <string>http://192.168.0.122:8080/app/lv_2.ipa</string>
+                </dict>
+				<dict>
+						<key>kind</key>
+						<string>display-image</string>
+						<key>needs-shine</key>
+						<true/>
+						<key>url</key>
+						<!-- 你的APP下载过程中，展示的icon -->
+						<string>https://coding-pages-bucket-445607-1245704-9329-439370-1257057656.cos-website.ap-shanghai.myqcloud.com/icon.png</string>
+				</dict>
+            </array>
+        <key>metadata</key>
+            <dict>
+                <key>bundle-identifier</key>
+                <string>com.lv818</string>
+                <key>bundle-version</key>
+                <string>1.0</string>
+                <key>kind</key>
+                <string>software</string>
+                <key>releaseNotes</key>
+                <string>1.0测试版本</string>
+                <key>title</key>
+                <string>lv818</string>
+            </dict>
+        </dict>
+    </array></dict></plist>
